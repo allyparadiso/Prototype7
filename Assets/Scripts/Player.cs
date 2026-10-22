@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private float _cinemachineTargetPitch;
     private float _verticalVelocity;
 
+    private int numberOfTeleports = 0;
+
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
@@ -75,14 +77,6 @@ public class Player : MonoBehaviour
             _cinemachineTargetPitch = Mathf.Clamp(_cinemachineTargetPitch, bottomClamp, topClamp);
 
             transform.Rotate(Vector3.up * (_lookInput.x + lookSensitivity));
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Teleport"))
-        {
-
         }
     }
 }
