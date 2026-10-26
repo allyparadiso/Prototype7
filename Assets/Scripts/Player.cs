@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
     private float _cinemachineTargetPitch;
     private float _verticalVelocity;
 
-    private int numberOfTeleports = 0;
-
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
